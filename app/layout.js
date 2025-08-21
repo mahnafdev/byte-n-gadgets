@@ -1,20 +1,28 @@
 import { Geist } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
 
+// Initialize Geist font-family
 const geistSans = Geist({
 	variable: "--font-geist-sans",
 	subsets: ["latin"],
 });
 
+// Define metadata like Title, Description
 export const metadata = {
 	title: "ByteNGadgets",
 	description: "A Gadgets & Electronics App. Built by Ahnaf with Next.js.",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children: page }) {
 	return (
 		<html lang="en">
-			<body className={`${geistSans.variable} antialiased`}>{children}</body>
+			<body className={`${geistSans.variable} antialiased`}>
+				<header>
+					<Navbar />
+				</header>
+				<main>{page}</main>
+			</body>
 		</html>
 	);
 }
