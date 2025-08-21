@@ -21,7 +21,7 @@ export default function RootLayout({ children: page }) {
 				<header>
 					<Navbar />
 				</header>
-				<main>{page}</main>
+				<main className="p-32">{page}</main>
 			</body>
 		</html>
 	);
