@@ -4,7 +4,7 @@ const Navbar = () => {
 	return (
 		<nav
 			id="navbar"
-			className="fixed top-0 left-0 right-0 px-32 py-4 bg-zinc-900/90 flex items-center justify-between border-b border-b-zinc-800"
+			className="fixed top-0 left-0 right-0 px-32 py-4 bg-zinc-900/85 backdrop-blur flex items-center justify-between border-b border-b-zinc-800"
 		>
 			{/* Logo */}
 			<Link href="/">

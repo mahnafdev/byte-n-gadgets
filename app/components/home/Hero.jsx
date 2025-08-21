@@ -26,7 +26,7 @@ const Hero = () => {
 				<Link href="/gadgets">
 					<button
 						type="button"
-						className="text-2xl font-medium px-5 py-2 bg-primary rounded-lg cursor-pointer hover:bg-primary/90 active:scale-95 transition-[background-color,scale] duration-250"
+						className="text-2xl font-medium px-6 py-2 bg-primary rounded-lg cursor-pointer hover:bg-primary/90 active:scale-95 transition-[background-color,scale] duration-250"
 					>
 						Explore Gadgets
 					</button>

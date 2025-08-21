@@ -1,6 +1,7 @@
 "use client";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import GadgetCard from "../GadgetCard";
 
 const GadgetHighlights = () => {
 	// Gadgets data state
@@ -36,8 +37,15 @@ const GadgetHighlights = () => {
 			{/* Display Gadgets in Grid layout */}
 			<div
 				id="gadget-highlights-grid"
-				className="grid grid-cols-4 gap-4"
-			></div>
+				className="grid grid-cols-4 gap-4 place-self-center"
+			>
+				{gadgets?.map((gadget) => (
+					<GadgetCard
+						key={gadget._id}
+						gadget={gadget}
+					/>
+				))}
+			</div>
 		</section>
 	);
 };
