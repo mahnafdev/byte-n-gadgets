@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import GadgetCard from "../GadgetCard";
+import Link from "next/link";
 
 const GadgetHighlights = () => {
 	// Gadgets data state
@@ -46,6 +47,18 @@ const GadgetHighlights = () => {
 					/>
 				))}
 			</div>
+			{/* View All Gadgets button */}
+			<Link
+				href="/gadgets"
+				className="flex justify-center"
+			>
+				<button
+					type="button"
+					className="text-xl font-medium w-56 py-2.5 rounded-lg bg-primary cursor-pointer hover:bg-primary/90 active:scale-95 transition-[background-color,scale]"
+				>
+					View All Gadgets
+				</button>
+			</Link>
 		</section>
 	);
 };
