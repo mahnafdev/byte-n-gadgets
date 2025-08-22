@@ -4,7 +4,7 @@ import Link from "next/link";
 const GadgetCard = ({ gadget }) => {
 	const { _id, name, image, category, price, stock } = gadget;
 	return (
-		<div className="w-sm bg-zinc-900 rounded-2xl">
+		<div className="w-sm bg-zinc-900 border border-zinc-800 rounded-2xl shadow-lg shadow-zinc-950/25 hover:shadow-none transition-shadow duration-250">
 			{/* Image */}
 			<div className="w-full h-72 rounded-t-2xl overflow-hidden">
 				<img
@@ -16,7 +16,7 @@ const GadgetCard = ({ gadget }) => {
 			{/* Content */}
 			<div className="m-5 space-y-3">
 				{/* Gadget Name */}
-				<h5 className="text-xl font-semibold">{name}</h5>
+				<h5 className="text-xl font-semibold line-clamp-1">{name}</h5>
 				{/* Category */}
 				<span
 					className="w-fit flex items-center gap-x-2 px-3 py-1 bg-zinc-800 rounded-full"

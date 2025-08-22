@@ -22,7 +22,7 @@ const GadgetHighlights = () => {
 	return (
 		<section
 			id="gadget-highlights"
-			className="space-y-8"
+			className="space-y-10"
 		>
 			<div className="space-y-2">
 				{/* Section Header */}
