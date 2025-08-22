@@ -1,8 +1,9 @@
 "use client";
-
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const AddGadget = () => {
+	const router = useRouter();
 	// Handle form submit and gadget creation
 	const handleAdd = (e) => {
 		// Prevent the page from reloading after form submission
@@ -20,8 +21,9 @@ const AddGadget = () => {
 			.then((res) => {
 				// Check if success
 				if (res.status === 201) {
-					// Reset form and show success toast-message
+					// Reset form and redirect
 					e.target.reset();
+					router.push("/gadgets");
 				}
 			})
 			.catch((error) => {
