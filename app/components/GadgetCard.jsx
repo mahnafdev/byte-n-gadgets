@@ -27,7 +27,7 @@ const GadgetCard = ({ gadget }) => {
 				</span>
 				{/* Price and Stock */}
 				<div className="flex gap-1">
-					<span className="text-lg py-1.5 w-2/5 border border-zinc-500 rounded-md grid place-items-center">
+					<span className="text-lg text-secondary py-1.5 w-2/5 border border-secondary rounded-md grid place-items-center">
 						${price}
 					</span>
 					<span
@@ -41,7 +41,10 @@ const GadgetCard = ({ gadget }) => {
 					</span>
 				</div>
 				{/* Details button */}
-				<Link href={`/gadgets/${_id}`}>
+				<Link
+					href={`/gadgets/${_id}`}
+					target="_blank"
+				>
 					<button
 						type="button"
 						className="w-full py-2 text-lg font-medium bg-primary rounded-lg cursor-pointer hover:bg-primary/90 active:rounded-md transition-[background-color,border-radius]"
