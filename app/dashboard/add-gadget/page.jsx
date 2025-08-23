@@ -17,7 +17,7 @@ const AddGadget = () => {
 		data.created_at = new Date().toLocaleDateString();
 		// Send data to server
 		axios
-			.post("http://localhost:5100/gadgets", data)
+			.post("https://byte-n-gadgets-server.vercel.app/gadgets", data)
 			.then((res) => {
 				// Check if success
 				if (res.status === 201) {

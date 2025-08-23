@@ -1,6 +1,8 @@
 import { Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import AuthSessionProvider from "./providers/AuthSessionProvider";
+import Footer from "./components/Footer";
 
 // Initialize Geist font-family
 const geistSans = Geist({
@@ -17,12 +19,15 @@ export const metadata = {
 export default function RootLayout({ children: page }) {
 	return (
 		<html lang="en">
-			<body className={`scheme-dark ${geistSans.variable} antialiased`}>
-				<header>
-					<Navbar />
-				</header>
-				<main className="p-32 space-y-32">{page}</main>
-			</body>
+			<AuthSessionProvider>
+				<body className={`scheme-dark ${geistSans.variable} antialiased`}>
+					<header>
+						<Navbar />
+					</header>
+					<main className="p-32 space-y-32">{page}</main>
+					<Footer />
+				</body>
+			</AuthSessionProvider>
 		</html>
 	);
 }

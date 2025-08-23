@@ -1,6 +1,9 @@
+"use client";
 import Link from "next/link";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
+	const authSession = useSession();
 	return (
 		<nav
 			id="navbar"
@@ -47,17 +50,39 @@ const Navbar = () => {
 						Gadgets
 					</Link>
 				</li>
+				<li>
+					<Link
+						href="/dashboard/add-gadget"
+						className="px-3 py-1.5 rounded-md hover:bg-foreground/10 active:bg-zinc-700/80 transition-colors duration-200"
+					>
+						Add Gadget
+					</Link>
+				</li>
 			</ul>
 			{/* Nav Buttons */}
 			<div id="nav-buttons">
-				<Link href="/login">
+				{authSession?.status === "authenticated" ? (
 					<button
 						type="button"
-						className="text-lg px-4 py-1.5 rounded-md bg-primary cursor-pointer hover:bg-primary/90 active:scale-95 transition-[background-color,scale]"
+						className="text-lg font-medium px-4 py-1.5 rounded-md bg-primary cursor-pointer hover:bg-primary/90 active:scale-95 transition-[background-color,scale]"
+						onClick={() => signOut()}
 					>
+						Logout
+					</button>
+				) : (
+					<button
+						type="button"
+						className="text-lg font-medium px-3 py-1.5 flex items-center gap-x-2 rounded-md bg-primary cursor-pointer hover:bg-primary/90 active:scale-95 transition-[background-color,scale]"
+						onClick={() => signIn()}
+					>
+						<img
+							src="/google.png"
+							alt="Google"
+							className="size-4"
+						/>
 						Login
 					</button>
-				</Link>
+				)}
 			</div>
 		</nav>
 	);

@@ -9,7 +9,7 @@ const Gadgets = () => {
 	// Fetch gadgets data
 	useEffect(() => {
 		axios
-			.get("http://localhost:5100/gadgets")
+			.get("https://byte-n-gadgets-server.vercel.app/gadgets")
 			.then((res) => {
 				// On successful GET
 				setGadgets(res.data);
